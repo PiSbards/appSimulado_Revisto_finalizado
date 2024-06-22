@@ -1,0 +1,24 @@
+CREATE TABLE [dbo].[professor] (
+    [Id]    INT        IDENTITY (1, 1) NOT NULL,
+    [nome]  NCHAR (20) NULL,
+    [email] NCHAR (20) NULL,
+    [senha] NCHAR (20) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[turma] (
+    [Id]           INT        IDENTITY (1, 1) NOT NULL,
+    [nomeTurma]    NCHAR (100) NULL,
+    [id_Professor] INT        NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[atividade] (
+    [Id]            INT        NOT NULL IDENTITY,
+    [nomeAtividade] NCHAR (20) NULL,
+    [id_turma]      INT        NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+INSERT INTO professor(nome,email,senha) VALUES('Pietro R.S.','pietro@teste.com','123');
+INSERT INTO professor(nome,email,senha) VALUES('Bruno','bru@bru.com','1234');
